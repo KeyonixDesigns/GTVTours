@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages | GTV Tours</title>
+    <link rel="shortcut icon" href="/Images/GTV_BLACK_MAN.png" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="/CSS/packages.css">
+    <link href='https://fonts.googleapis.com/css?family=Sansita' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/?index.ejs"><img src="/Images/Logo_Nav.png" alt="Globetrotters Voyage"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/?index.ejs">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/?page=ReadMore">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/?index.ejs">Gallery</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  id="list" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Domestic</a>
+            <ul class="dropdown-menu">
+              <div class="pack">
+                <div class="dom">
+                    <li><a class="dropdown-item" href="/?package=Himachal">Himachal</a></li>
+                    <li><a class="dropdown-item" href="/?package=Andaman">Andaman</a></li>
+                    <li><a class="dropdown-item" href="/?package=Kerala">Kerala</a></li>
+                    <li><a class="dropdown-item" href="/?package=Kashmir">Kashmir</a></li>
+                    <li><a class="dropdown-item" href="/?package=Goa">Goa</a></li>
+                    <li><a class="dropdown-item" href="/?package=North East">North East</a></li>
+                </div>
+              </div>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  id="list" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">International</a>
+            <ul class="dropdown-menu"> 
+              <div class="ext">
+                <li><a class="dropdown-item" id="cru" href="/?package=Cruise">Cruises</a></li>
+                <li><a class="dropdown-item" id="fd" href="/?package=Fixed Departure">Fixed Departures</a></li>
+              </div><hr>
+              <div class="int">
+                <div class="list1">
+                  <li><a class="dropdown-item" href="/?package=Turkey">Turkey</a></li>
+                    <li><a class="dropdown-item" href="/?package=Europe">Europe</a></li>
+                    <li><a class="dropdown-item" href="/?package=Bali">Bali</a></li>
+                    <li><a class="dropdown-item" href="/?package=Thailand">Thailand</a></li>
+                    <li><a class="dropdown-item" href="/?package=Dubai">Dubai</a></li>
+                    <li><a class="dropdown-item" href="/?package=Maldives">Maldives</a></li>
+                    <li><a class="dropdown-item" href="/?package=Vietnam">Vietnam</a></li>
+                  </div>
+                  <div class="list2">
+                    <li><a class="dropdown-item" href="/?package=Sri Lanka">Sri Lanka</a></li>
+                    <li><a class="dropdown-item" href="/?package=Hong Kong">Hong Kong</a></li>
+                    <li><a class="dropdown-item" href="/?package=Saudi Arabia">Saudi Arabia</a></li>
+                    <li><a class="dropdown-item" href="/?package=Malaysia">Malaysia</a></li>
+                    <li><a class="dropdown-item" href="/?package=Singapore">Singapore</a></li>
+                    <li><a class="dropdown-item" href="/?package=Mauritius">Mauritius</a></li>
+                </div>
+             </div>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/?index.ejs">Popular</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact Us</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search ..." aria-label="Search">
+          <button onclick="showAlert()" class="btn btn-outline-success" type="submit"><i class="fa fa-search fa-2x"></i></button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <h1>Our Packages</h1>
+  <div class="p-pack">
+    <div class="card">
+      <a href="/?package=Andaman">
+        <img src="/Images/Andaman_P.png" alt="Andaman">
+          <figcaption>Andaman</figcaption>
+        </img>
+      </a>
+    </div>
+    <div class="card">
+      <a href="/?package=Bali">
+        <img src="/Images/Bali_P.png" alt="Bali">
+          <figcaption>Bali</figcaption>
+        </img>
+      </a>
+    </div>
+    <div class="card">
+      <a href="/?package=Dubai">
+        <img src="/Images/Dubai_P.png" alt="Dubai">
+          <figcaption>Dubai</figcaption>
+        </img>
+      </a>
+    </div>
+    <div class="card">
+      <a href="/?package=Europe">
+        <img src="/Images/Europe_P.png" alt="Europe">
+          <figcaption>Europe</figcaption>
+        </img>
+      </a>
+    </div>
+    <div class="card">
+      <a href="/?package=Goa">
+        <img src="/Images/Goa_P.png" alt="Goa">
+          <figcaption>Goa</figcaption>
+        </img>
+      </a>
+    </div>
+    <div class="card">
+      <a href="/?package=Himachal">
+        <img src="/Images/Himachal_P.png" alt="Himachal Pradesh">
+          <figcaption>Himachal</figcaption>
+        </img>
+      </a>
+    </div>
+    <div class="card">
+      <a href="/?package=Hong Kong">
+        <img src="/Images/HongKong_P.png" alt="Hong Kong">
+          <figcaption>Hong Kong</figcaption>
+        </img>
+      </a>
+    </div>
+    <div class="card">
+      <a href="/?package=Kashmir">
+        <img src="/Images/Kashmir_P.png" alt="Kashmir">
+          <figcaption>Kashmir</figcaption>
+        </img>
+      </a>
+    </div>
+    <div class="card">
+      <a href="/?package=Kerala">
+        <img src="/Images/Kerala_P.png" alt="Kerala">
+          <figcaption>Kerala</figcaption>
+        </img>
+      </a>
+    </div>
+    <div class="card">
+      <a href="/?package=Malaysia">
+        <img src="/Images/Malaysia_P.png" alt="Malaysia">
+          <figcaption>Malaysia</figcaption>
+        </img>
+      </a>
+    </div>
+    <div class="card">
+      <a href="/?package=Maldives">
+        <img src="/Images/Maldives_P.png" alt="Maldives">
+          <figcaption>Maldives</figcaption>
+        </img>
+      </a>
+    </div>
+    <div class="card">
+      <a href="/?package=Mauritius">
+        <img src="/Images/Mauritius_P.png" alt="Mauritius">
+          <figcaption>Mauritius</figcaption>
+        </img>
+      </a>
+    </div>
+    <div class="card">
+      <a href="/?package=North East">
+        <img src="/Images/NorthEast_P.png" alt="North East">
+          <figcaption>North East</figcaption>
+        </img>
+      </a>
+    </div>
+    <div class="card">
+      <a href="/?package=Saudi Arabia">
+        <img src="/Images/SaudiArabia_P.png" alt="Saudi Arabia">
+          <figcaption>Saudi Arabia</figcaption>
+        </img>
+      </a>
+    </div>
+    <div class="card">
+      <a href="/?package=Singapore">
+        <img src="/Images/Singapore_P.png" alt="Singapore">
+          <figcaption>Singapore</figcaption>
+        </img>
+      </a>
+    </div>
+    <div class="card">
+      <a href="/?package=Sri Lanka">
+        <img src="/Images/SriLanka_P.png" alt="Sri Lanka">
+          <figcaption>Sri Lanka</figcaption>
+        </img>
+      </a>
+    </div>
+    <div class="card">
+      <a href="/?package=Thailand">
+        <img src="/Images/Thailand_P.png" alt="Thailand">
+          <figcaption>Thailand</figcaption>
+        </img>
+      </a>
+    </div>
+    <div class="card">
+      <a href="/?package=Turkey">
+        <img src="/Images/Turkey_P.png" alt="Turkey">
+          <figcaption>Turkey</figcaption>
+        </img>
+      </a>
+    </div>
+    <div class="card">
+      <a href="/?package=Vietnam">
+        <img src="/Images/Vietnam_P.png" alt="Vietnam">
+          <figcaption>Vietnam</figcaption>
+        </img>
+      </a>
+    </div>
+  </div>
+
+  <!-- Contact & Footer -->
+  <footer id="contact" class="footer">
+    <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/?index.ejs" class="logo"><img src="/Images/Logo_Footer.png" alt="GTV logo"></a>
+          <p class="footer-text">Building a legacy of redefining travel,<br>inspiring to explore and sharing<br>reasons to celebrate life!</p>
+          </div>
+          <div class="code">
+          <a href="https://instagram.com/gtvtours?igshid=ZDdkNTZiNTM=" class="qr-code"><img src="/Images/GTV_QR.png" alt="GTV Tours"></a>
+          </div>
+          <div class="left">
+          <h4>Call To Action</h4>
+          <h2>Ready For Unforgatable<br>Travel. Remember Us!</h2> 
+          </div>
+          <div class="footer-contact">
+            <h4 class="contact-title">Contact Us</h4>
+            <p class="contact-text">Feel free to contact and<br>reach us !!</p>
+            <ul class="c-list">
+              <li class="contact-item">
+                <i class="fa fa-phone"></i>
+                <a href="tel:+91 7498979710" class="contact-link">+91 7498979710</a>
+              </li>
+              <li class="contact-item">
+                <i class="fa fa-envelope"></i>
+                <a href="mailto:gtvtours@gmail.com" class="contact-link">gtvtours@gmail.com</a>
+              </li>
+              <li class="contact-item">
+                <i class="fa fa-map-marker"></i>
+                <address>&nbsp;&nbsp;353 - Manimahal, 2nd Floor,<br>Room No. - A/8, Kalbadevi Road,<br>Mumbai, Maharashtra - 400 002.</address>
+              </li>
+            </ul>
+          </div>
+      </div>
+        <footer class="py">
+          <ul class="nav justify-content-center pb">
+            <li class="nav-item"><a href="/?page=pp" class="policy">Privacy Policy</a></li>&nbsp;&nbsp; | &nbsp;&nbsp;
+            <li class="nav-item"><a href="/?page=tnc" class="policy">Terms and Conditions</a></li>
+          </ul>
+          <p class="text-center">© 2023 <a id="company" href="/?index.ejs">Globetrotters Voyage</a>. All rights reserved - Design:&nbsp;&nbsp;<a href="mailto:k.keyonix@gmail.com" id="design-company">Keyonix</a></p>
+        </footer>
+  </footer>
+
+  <!-- Go To Top -->
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-up fa-2x"></i></button>
+
+  <!-- Script Files -->
+  <script src="/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>

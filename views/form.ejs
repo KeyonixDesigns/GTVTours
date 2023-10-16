@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@900&family=Nabla&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <title>Query | GTV Tours</title>
+
+    <!-- CSS Files -->
+    <style>
+        :root{
+        --dark-gray:#071219;
+        --gray:#0c1c28;
+        --medium-gray:#36454f;
+        --light-gray:hsl(0, 0%, 43%);
+        --white-shade:#e9ebed;
+        --light-blue:#57a3be;
+        --navy-blue:#006092;
+        --dark-navyblue:#0c1c29;
+        --darkest-navyblue:#081319;
+        --dark-brown:#4a4a46;
+        --green:#04AA6D;
+        --red:#D2042D;
+        --orange:#ffa500;
+    
+        --section-padding:60px;
+
+        --hue: 223;
+        --bg: hsl(var(--hue),90%,25%);
+        --fg: hsl(var(--hue),10%,90%);
+        --trans-dur: 0.3s;
+}
+
+  html{ 
+    scroll-behavior: smooth;
+    padding:0;
+    margin: 0;
+    overflow-x: hidden;
+  }
+  
+  body{
+  margin: 0;
+  padding: 0;
+  background: url('/Images/map.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  }
+  
+  /* Scroll bar */
+  ::-webkit-scrollbar{
+  width: 8px;
+  background: var(--medium-gray);
+  }
+  ::-webkit-scrollbar-thumb{
+    background-color: var(--white-shade);
+    border-radius: 2px;
+  }
+
+  /* Form */
+  .modal {
+    font-family: 'Poppins', sans-serif;
+    color: var(--navy-blue);
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    padding: 20px;
+    border: none;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 38px -8px rgba(0,0,0,0.34);
+    -moz-box-shadow: 0px 0px 38px -8px rgba(0,0,0,0.34);
+    box-shadow: 0px 0px 38px -8px rgba(0,0,0,0.34);
+  }
+
+  .modal-content h2{
+    font-weight: 900;
+    color: var(--dark-brown);
+  }
+
+  .form-section label {
+    font-weight: bold;
+    padding: 20px 0 0 0;
+  }
+  
+  .form-section input,
+  .form-section select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: var(--dark-brown);
+    font-weight: 900;
+    font-size: 1.1rem;
+    background: none;
+  }
+
+  .form-section-row{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 40px;
+    margin-right: 20px;
+  }
+  .form-section-column{
+    display:flex;
+    flex-direction:column;
+  }
+
+  @media (max-width: 576px){
+    .form-section-row{
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+    }
+  }
+  .form-section-column label {
+    font-weight: bold;
+    padding: 20px 0 0 0;
+  }
+  .form-section-column label i{
+    color: var(--light-gray);
+  }
+  
+  .form-section-column input,
+  .form-section-column select {
+    width: 100%;
+    float: left;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: var(--dark-brown);
+    background-color: hsla(0, 0%, 43%, 0.1);
+    color: var(--dark-brown);
+    font-weight: 700;
+  }
+  ::placeholder {
+  color: var(--light-gray);
+  font-weight: 500;
+}
+
+  
+  #submit-form-btn {
+    width: 100%;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    background-color: var(--green);
+    color: var(--white-shade);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+  }
+    </style>
+</head>
+<body>
+    <!-- Form -->
+    <div class="modal">
+        <div class="modal-content">
+          <h2>Submit your query</h2>
+          <form id="myForm" action="/query" target="_blank" method="post">
+            <div class="form-section">
+              <label for="packageName">Your Desired Package:</label>
+              <input type="text" id="packageName" name="packageTitle" required readonly value="<%= heading %>">
+            </div>
+            <div class="form-section-row">
+            <div class="form-section-column">
+              <label>Your Travel Date:</label>
+              <input type="date" name="travelDate" id="travelDate" required>
+             </div> 
+            <div class="form-section-column">
+              <label for="adults">Number of Adults:</label>
+              <input type="number" id="adults" placeholder="18yrs +" name="adults" min="0" required>
+            </div>
+            <div class="form-section-column">
+              <label for="child">Number of Child:</label>
+              <input type="number" id="child" placeholder="3 - 17yrs" name="child" min="0" required>
+            </div>
+            <div class="form-section-column">
+              <label for="infants">Number of Infants:</label>
+              <input type="number" id="infants" placeholder="0 - 2yrs" name="infants" min="0" required>
+            </div>
+            <div class="form-section-column">
+              <label for="leadPassenger">Lead Passenger:</label>
+              <input type="text" id="leadPassenger" placeholder="Your Name" name="passenger" required>
+            </div>
+            <div class="form-section-column">
+              <label for="phone">Phone Number:</label>
+              <input type="tel" id="phone" name="phoneNo" pattern="[0-9]{10}" required>
+            </div>
+            <div class="form-section-column">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-section-column">
+              <label for="pinCode">Pin Code:</label>
+              <input type="text" id="pinCode" name="pincode" pattern="[0-9]{6}" required>
+            </div>
+            </div>
+            <button id="submit-form-btn" type="submit">Submit</button>
+          </form>
+          </div>
+        </div>
+
+        <script type="text/javascript">
+          window.onload=function(){
+      var today = new Date().toISOString().split('T')[0];
+      document.getElementsByName("travelDate")[0].setAttribute('min', today);
+          }
+      
+        </script>
+        <script src="/script.js"></script>
+</body>
+</html>
