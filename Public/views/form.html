@@ -217,11 +217,11 @@
           </div> -->
           <div class="form-section-row">
             <div class="form-section-column">
-              <label for="travelDate">Your Travel Date:</label>
+              <label for="date">Your Travel Date:</label>
               <input
                 type="date"
-                name="user_travelDate"
-                id="travelDate"
+                name="user_date"
+                id="date"
                 required
               />
             </div>
@@ -273,7 +273,7 @@
               <input
                 type="tel"
                 id="phone"
-                name="user_phoneNo"
+                name="user_phone"
                 pattern="[0-9]{10}"
                 required
               />
@@ -283,10 +283,10 @@
               <input type="email" id="email" name="user_email" required />
             </div>
             <div class="form-section-column">
-              <label for="pinCode">Pin Code:</label>
+              <label for="pincode">Pin Code:</label>
               <input
                 type="text"
-                id="pinCode"
+                id="pincode"
                 name="user_pincode"
                 pattern="[0-9]{6}"
                 required
@@ -306,6 +306,41 @@
         </form>
       </div>
     </div>
+
+    <!-- <div class="contact__mail">
+      <h2 class="contact__title">
+        Send Me A Message
+      </h2>
+      <form action="" class="contact__form" id="contact-form">
+        <div class="contact__group">
+          <div class="contact__box">
+            <input type="text" name="user_name" class="contact__input" id="name" required placeholder="Your Name">
+            <label for="name" class="contact__label">Lead Passenger</label>
+          </div>
+
+          <div class="contact__box">
+            <input type="email" name="user_email" class="contact__input" id="email" required placeholder="Email Address">
+            <label for="email" class="contact__label">Email Address</label>
+          </div>
+        </div>
+
+          <div class="contact__box">
+            <input type="text" name="user_subject" class="contact__input" id="subject" required placeholder="Subject">
+            <label for="subject" class="contact__label">Subject</label>
+          </div>
+
+          <div class="contact__box contact__area">
+            <textarea type="text" name="user_message" class="contact__input" id="message" required placeholder="Message"></textarea>
+            <label for="message" class="contact__label">Message</label>
+          </div>
+
+          <p class="contact__message" id="contact-message"></p>
+
+          <button type="submit" class="contact__button button">
+            <i class="ri-send-plane-line"></i>Send Message
+          </button>
+      </form>
+    </div> -->
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 

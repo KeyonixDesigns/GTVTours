@@ -1,10 +1,3 @@
-// On clicking Search button
-function showAlert() {
-  alert(
-    "Section is under development. Kindly explore our website for more information."
-  );
-}
-
 // Search Filter
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
@@ -113,36 +106,37 @@ arr.map(function (item) {
 });
 
 // Query Form
-const queryForm = document.getElementById("myForm"),
-  queryMessage = document.getElementById("query_message");
+const queryForm = document.getElementById('myForm'),
+      queryMessage = document.getElementById('query_message')
 
 const sendEmail = (e) => {
-  e.preventDefault();
+  e.preventDefault()
 
   // serviceID - templateID - #form - public key
-  emailjs.sendForm(
-    "service_w7m2nqd",
-    "template_gjk5lls",
-    "myForm",
-    "glJomlwMLJbMK3rPo"
-  );
-  then(
-    () => {
-      queryMessage.textContent = "Message sent successfully!";
+  emailjs
+    .sendForm(
+      "service_w7m2nqd",
+      "template_5gxl63b",
+      "#myForm",
+      "glJomlwMLJbMK3rPo"
+    )
+    .then(
+      () => {
+        queryMessage.textContent = "Message sent successfully!"
 
-      // Remove message after 5 seconds
-      setTimeout(() => {
-        queryMessage.textContent = '';
-      }, 5000);
+        // Remove message after 5 seconds
+        setTimeout(() => {
+          queryMessage.textContent = ""
+        }, 5000)
 
-      // Clear input fields
-      queryForm.reset();
-    },
-    () => {
-      // show error message
-      queryMessage.textContent = "Message not sent! (service error)";
-    }
-  );
-};
+        // Clear input fields
+        queryForm.reset()
+      },
+      () => {
+        // show error message
+        queryMessage.textContent = "Message not sent! (service error)"
+      }
+    )
+}
 
-queryForm.addEventListener("submit", sendEmail);
+queryForm.addEventListener('submit', sendEmail)
