@@ -137,7 +137,7 @@ body {
   color: var(--navy-blue);
 }
 
-@media (min-width: 1201px) and (max-width: 1800px) {
+@media (min-width: 1400px) and (max-width: 1800px) {
   .bg {
     background-size: contain;
     height: auto;
@@ -171,7 +171,7 @@ body {
   .bg {
     background-size: contain;
     min-height: 40vh;
-    margin-bottom: -60px;
+    margin-bottom: -80px;
   }
   .navbar-brand img {
     height: 40px;
