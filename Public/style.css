@@ -137,7 +137,7 @@ body {
   color: var(--navy-blue);
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1201px) and (max-width: 1800px) {
   .bg {
     background-size: contain;
     height: auto;
