@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goa | GTV Tours</title>
+  <link rel="stylesheet" href="/public/CSS/goa.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="/public/img/GTV_BLACK_MAN.png" type="image/svg+xml" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- AOS Animation CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <meta name="theme-color" content="#1b1b1b" />
+</head>
+<body>
+<button onclick="openModal()" type="submit" class="query-float" title="Raise Query">
+  <img src="/public/SVG/Query.svg" alt="Raise Query">
+</button>
+
+<!-- Modal Form -->
+<div id="modal" class="modal">
+<div class="modal-content">
+  <span class="close-btn" onclick="closeModal()">&times;</span>
+  <h4>Travel Query</h4>
+  <form action="" class="contact__form" id="contact-form">
+    <h2 id="modal-title"></h2>
+    <input type="hidden" name="modal_title" id="modal-title-input">
+
+    <div class="contact__group">
+      <!-- User Name -->
+      <div class="contact__box">
+        <input type="text" name="user_name" id="name" class="contact__input" required placeholder="Your Name">
+        <label for="name" class="contact__label">Your Name</label>
+      </div>
+
+      <!-- Email -->
+      <div class="contact__box">
+        <input type="email" name="user_email" id="email" class="contact__input" required placeholder="Email Address">
+        <label for="email" class="contact__label">Email Address</label>
+      </div>
+
+      <!-- Phone -->
+      <div class="contact__box">
+        <input type="tel" name="user_phone" id="phone" class="contact__input" required placeholder="Phone Number">
+        <label for="phone" class="contact__label">Phone Number</label>
+      </div>
+
+      <!-- Pincode -->
+      <div class="contact__box">
+        <input type="number" name="user_pincode" id="pincode" class="contact__input" required placeholder="Your Pincode">
+        <label for="pincode" class="contact__label">Your Pincode</label>
+      </div>
+
+      <!-- Start Date -->
+      <div class="contact__box">
+        <input type="date" name="user_sdate" id="sdate" class="contact__input" required>
+        <label for="sdate" class="contact__label">Start Date</label>
+      </div>
+
+      <!-- End Date -->
+      <div class="contact__box">
+        <input type="date" name="user_edate" id="edate" class="contact__input" required>
+        <label for="edate" class="contact__label">End Date</label>
+      </div>
+
+      <!-- No. Of Adults -->
+      <div class="contact__box">
+        <input type="number" name="user_adult" id="adult" class="contact__input" required placeholder="No. Of Adults">
+        <label for="adult" class="contact__label">No. Of Adults</label>
+      </div>
+
+      <!-- No. Of Child -->
+      <div class="contact__box">
+        <input type="number" name="user_child" id="child" class="contact__input" required placeholder="No. Of Children">
+        <label for="child" class="contact__label">No. Of Children</label>
+      </div>
+
+      <!-- No. Of Infant -->
+      <div class="contact__box">
+        <input type="number" name="user_infant" id="infant" class="contact__input" required placeholder="No. Of Infants">
+        <label for="infant" class="contact__label">No. Of Infants</label>
+      </div>
+
+      <!-- Meal Inclusion -->
+      <div class="contact__box">
+        <input type="text" name="user_meal" id="meal" class="contact__input" required placeholder="Meal Inclusion?">
+        <label for="meal" class="contact__label">Meal Inclusion?</label>
+      </div>
+
+      <!-- Special Request -->
+      <div class="contact__box contact__area">
+        <textarea name="user_message" id="message" class="contact__input" required placeholder="Any Message or Special Request?"></textarea>
+        <label for="message" class="contact__label">Your Message</label>
+      </div>
+
+    </div>
+
+    <p class="contact__message" id="contact-message"></p>
+
+    <button type="submit" class="contact__button" onclick="callSubmit()">
+      <i class="ri-send-plane-line"></i> Submit Your Query
+    </button>
+  </form>
+</div>
+</div>
+
+<header class="navbar">
+  <div class="navbar-container">
+      <div class="logo">
+          <a href="/index.html"><img src="/public/img/GV_Final_BLACK_CIrcle_withoutBG.png" alt=""></a>
+      </div>
+      <nav class="nav-links">
+          <ul>
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/public/views/rm.html">About Us</a></li>
+              <li><a href="/index.html#gallery">Gallery</a></li>
+              <li><a href="/public/views/packages.html">Packages</a></li>
+              <li><a href="/index.html#packages">Popular</a></li>
+              <li><a href="/public/views/blog.html">Blogs</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+          </ul>
+      </nav>
+      <div class="search-container">
+          <input type="text" class="search-input" placeholder="Search..." id="myInput" onkeyup="filterFunction()">
+          <button class="search-btn search-drp-button" onclick="myFunction()">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="24" y1="26" x2="16.65" y2="16.65"></line>
+              </svg>
+          </button>
+
+          <div id="myDropdown" class="search-content">
+            <!-- Goa -->
+            <a href="/Public/views/goa.html" data-sort="Goa">Goa</a>
+            <a href="/Public/views/goa.html" data-sort=" North Goa">North Goa</a>
+            <a href="/Public/views/goa.html" data-sort="South Goa">South Goa</a>
+
+            <!-- Himachal Pradesh -->
+            <a href="/Public/views/himachal.html" data-sort="Himachal Pradesh">Himachal Pradesh</a>
+            <a href="/Public/views/himachal.html" data-sort="Dharamshala">Dharamshala</a>
+            <a href="/Public/views/himachal.html" data-sort="Mcleodganj">Mcleodganj</a>
+            <a href="/Public/views/himachal.html" data-sort="Manali">Manali</a>
+            <a href="/Public/views/himachal.html" data-sort="Shimla">Shimla</a>
+            <a href="/Public/views/himachal.html" data-sort="Dalhousie">Dalhousie</a>
+            <a href="/Public/views/himachal.html" data-sort="Kasol">Kasol</a>
+            <a href="/Public/views/himachal.html" data-sort="Kullu">Kullu</a>
+            <a href="/Public/views/himachal.html" data-sort="Manikaran">Manikaran</a>
+            <a href="/Public/views/himachal.html" data-sort="Amritsar">Amritsar</a>
+
+            <!-- Rajasthan -->
+            <a href="/Public/views/rj.html" data-sort="Jaisalmer">Rajasthan</a>
+            <a href="/Public/views/rj.html" data-sort="Jaisalmer">Jaisalmer</a>
+            <a href="/Public/views/rj.html" data-sort="Thar Desert">Thar Desert</a>
+            <a href="/Public/views/rj.html" data-sort="Kuldhara">Kuldhara</a>
+
+            <!-- Kashmir -->
+            <a href="/Public/views/kashmir.html" data-sort="Kashmir">Kashmir</a>
+            <a href="/Public/views/kashmir.html" data-sort="Srinagar">Srinagar</a>
+            <a href="/Public/views/kashmir.html" data-sort="Pahalgam">Pahalgam</a>
+            <a href="/Public/views/kashmir.html" data-sort="Gulmarg">Gulmarg</a>
+
+            <!-- North East -->
+            <a href="/Public/views/ne.html" data-sort="North East">North East</a>
+            <a href="/Public/views/ne.html" data-sort="Gangtok">Gangtok</a>
+            <a href="/Public/views/ne.html" data-sort="Darjeeling">Darjeeling</a>
+            <a href="/Public/views/ne.html" data-sort="Pelling">Pelling</a>
+            <a href="/Public/views/ne.html" data-sort="Lachen">Lachen</a>
+            <a href="/Public/views/ne.html" data-sort="Lachung">Lachung</a>
+          </div>
+      </div>
+      
+      <button class="hamburger">
+          <svg width="30" height="30" viewBox="0 0 100 100">
+              <rect width="80" height="10" x="10" y="25" rx="5" fill="#111111"></rect>
+              <rect width="80" height="10" x="10" y="45" rx="5" fill="#111111"></rect>
+              <rect width="80" height="10" x="10" y="65" rx="5" fill="#111111"></rect>
+          </svg>
+      </button>
+
+      <button class="cross-button">
+          <svg width="30" height="30" viewBox="0 0 100 100">
+            <line x1="20" y1="20" x2="80" y2="80" stroke="#111111" strokeWidth="10" strokeLinecap="round" />
+            <line x1="80" y1="20" x2="20" y2="80" stroke="#111111" strokeWidth="10" strokeLinecap="round" />
+          </svg>
+      </button>
+  </div>
+</header>
+
+<div class="home"></div>
+  
+<!-- Package Discription -->
+<div class="package">
+  <div class="package-items" data-aos="fade-up" data-aos-delay="200">
+    <!-- Item 1 -->
+    <div id="filterable-cards" class="item" data-aos="fade-up" data-aos-delay="100">
+      <div class="p-start" id="p-start-3">
+        <h5 id="packageHeading">Simply North Goa</h5>
+        <i class="fa fa-map-signs"></i>&nbsp;&nbsp;3N North Goa
+          <hr>
+          <ul>
+              <li>3 Star Hotel Accommodation</li>
+              <li>Customisable Meal Plans</li>
+              <li>North Goa Excursion</li>
+              <li>All Transfer & Sightseeing via 1 Sedan/Hatchback</li>
+              <li>Pick Up & Drop Off Option Available</li>
+          </ul>
+      </div>
+      <div class="p-end">
+        <div class="p-end-1">
+          <div class="att" id="att-3">
+            <i class="fa fa-building"></i>&nbsp;&nbsp;<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+          </div>
+            <div class="d-btn" id="d-btn-3">
+              <button onclick="openModal('Simply North Goa')" type="submit">Get Quote</button>
+            </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item 2 -->
+  <div id="filterable-cards" class="item" data-aos="fade-up" data-aos-delay="100">
+    <div class="p-start" id="p-start-3">
+      <h5>Scenic South Goa</h5>
+      <i class="fa fa-map-signs"></i>&nbsp;&nbsp;3N South Goa
+        <hr>
+        <ul>
+            <li>3 Star Hotel Accommodation</li>
+            <li>Customisable Meal Plans</li>
+            <li>South Goa Excursion</li>
+            <li>All Transfer & Sightseeing via 1 Sedan/Hatchback</li>
+            <li>Pick Up & Drop Off Option Available</li>
+        </ul>
+    </div>
+    <div class="p-end">
+      <div class="p-end-1">
+          <div class="att" id="att-3">
+              <i class="fa fa-building"></i>&nbsp;&nbsp;<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+            </div>
+          <div class="d-btn" id="d-btn-3">
+            <button onclick="openModal('Scenic South Goa')" type="submit">Get Quote</button>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item 3 -->
+  <div id="filterable-cards" class="item" data-aos="fade-up" data-aos-delay="100">
+    <div class="p-start" id="p-start-3">
+      <h5>Exotic Goa</h5>
+      <i class="fa fa-map-signs"></i>&nbsp;&nbsp;2N North Goa | 2N South Goa
+        <hr>
+        <ul>
+            <li>4 Star Hotel Accommodation</li>
+            <li>Customisable Meal Plans</li>
+            <li>South Goa Excursion</li>
+            <li>North Goa Excursion</li>
+            <li>All Transfer & Sightseeing via 1 Sedan/Hatchback</li>
+            <li>Pick Up & Drop Off Option Available</li>
+        </ul>
+    </div>
+    <div class="p-end">
+      <div class="p-end-1">
+          <div class="att" id="att-3">
+              <i class="fa fa-building"></i>&nbsp;&nbsp;<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+            </div>
+          <div class="d-btn" id="d-btn-3">
+            <button onclick="openModal('Exotic Goa')" type="submit">Get Quote</button>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item 4 -->
+  <div id="filterable-cards" class="item" data-aos="fade-up" data-aos-delay="100">
+    <div class="p-start" id="p-start-3">
+      <div class="highlight" id="item-1">Dudhsagar Falls Special</div>
+      <h5>Best Of Goa With Dudhsagar Falls</h5>
+      <i class="fa fa-map-signs"></i>&nbsp;&nbsp;3N North Goa | 2N South Goa
+        <hr>
+        <ul>
+            <li>3 Star Hotel Accommodation</li>
+            <li>Customisable Meal Plans</li>
+            <li>South Goa Excursion</li>
+            <li>North Goa Excursion</li>
+            <li>Visit Dudhsagar Falls</li>
+            <li>All Transfer & Sightseeing via 1 Sedan/Hatchback</li>
+            <li>Pick Up & Drop Off Option Available</li>
+        </ul>
+    </div>
+    <div class="p-end">
+      <div class="p-end-1">
+          <div class="att" id="att-3">
+              <i class="fa fa-building"></i>&nbsp;&nbsp;<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+            </div>
+          <div class="d-btn" id="d-btn-3">
+            <button onclick="openModal('Best Of Goa With Dudhsagar Falls')" type="submit">Get Quote</button>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  </div>
+
+  <!-- Modal Form -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h4>Travel Query</h4>
+        <form action="" class="contact__form" id="contact-form">
+        <h2 id="modal-title"></h2>
+        <!-- Add this hidden input field -->
+        <input type="hidden" name="modal_title" id="modal-title-input">
+          <div class="contact__group">
+            <div class="contact__box">
+               <input type="text" name="user_name" class="contact__input" id="name" required placeholder="Your Name">
+               <label for="name" class="contact__label">Your Name</label>
+            </div>
+
+            <div class="contact__box">
+               <input type="email" name="user_email" class="contact__input" id="email" required placeholder="Email Address">
+               <label for="email" class="contact__label">Email Address</label>
+            </div>
+
+         <div class="contact__box">
+            <input type="tel" name="user_phone" class="contact__input" id="phone" required placeholder="Phone Number">
+            <label for="phone" class="contact__label">Phone Number</label>
+         </div>
+
+         <div class="contact__box">
+          <input type="number" name="user_pincode" class="contact__input" id="pincode" required placeholder="Your Pincode">
+          <label for="phone" class="contact__label">Your Pincode</label>
+        </div>
+
+        <div class="contact__box">
+          <input type="date" name="user_sdate" class="contact__input" id="sdate" required placeholder="Start Date">
+          <label for="phone" class="contact__label">Start Date</label>
+        </div>
+
+        <div class="contact__box">
+          <input type="date" name="user_edate" class="contact__input" id="edate" required placeholder="End Date">
+          <label for="phone" class="contact__label">End Date</label>
+        </div>
+
+        <div class="contact__box">
+          <input type="number" name="user_adult" class="contact__input" id="adult" required placeholder="No. Of Adults">
+          <label for="phone" class="contact__label">No. Of Adult</label>
+        </div>
+
+        <div class="contact__box">
+          <input type="number" name="user_child" class="contact__input" id="child" required placeholder="No. Of Child">
+          <label for="phone" class="contact__label">No. Of Child</label>
+        </div>
+
+        <div class="contact__box">
+          <input type="number" name="user_infant" class="contact__input" id="infant" required placeholder="No. Of Infant">
+          <label for="phone" class="contact__label">No. Of Infant</label>
+        </div>
+
+        <div class="contact__box">
+          <input type="text" name="user_meal" class="contact__input" id="meal" required placeholder="Meal Inclusion?">
+          <label for="phone" class="contact__label">Meal Inclusion?</label>
+        </div>
+
+        <div class="contact__box contact__area">
+          <textarea type="text" name="user_message"  class="contact__input" id="message" required placeholder="Any Message or Special Request?"></textarea>
+          <label for="message" class="contact__label">Your Input</label>
+       </div>
+
+       <p class="contact__message" id="contact-message"></p>
+
+        <button type="submit" class="contact__button button" onclick="callSubmit()">
+          <i class="ri-send-plane-line"></i>Submit Your Query
+        </button>
+
+        </div>
+        </form>
+    </div>
+</div>
+
+        <!-- Contact & Footer -->
+        <footer id="contact" class="footer">
+          <div class="footer-top">
+              <div class="footer-brand">
+                  <a href="/index.html" class="logo"><img src="/public/img/GV_Final_BLACK_CIrcle_withoutBG.png" alt="GTV logo"/></a>
+                  <p class="footer-text">
+                  Building a legacy of redefining travel,<br />inspiring to explore
+                  and sharing<br />reasons to celebrate life!
+                  </p>
+              </div>
+              <div class="code">
+                  <a href="https://instagram.com/gtvtours?igshid=ZDdkNTZiNTM=" class="qr-code"><img src="/public/img/GTV_QR.png" alt="GTV Tours"/></a>
+              </div>
+              <div class="left">
+                  <h4>Call To Action</h4>
+                  <h2>Ready For Unforgatable Travel. Remember Us!</h2>
+              </div>
+              <div class="footer-contact">
+                  <h4 class="contact-title">Contact Us</h4>
+                  <p class="contact-text">
+                  Feel free to contact and<br />reach us !!
+                  </p>
+                  <ul class="c-list">
+                  <li class="contact-item">
+                      <i class="fa fa-phone"></i>
+                      <a href="tel:+91 7498979710" class="contact-link"
+                      >+91 74989 79710</a>
+                  </li>
+                  <li class="contact-item">
+                      <i class="fa fa-envelope"></i>
+                      <a href="mailto:gtvtours@gmail.com" class="contact-link"
+                      >info@gtvtours.com</a
+                      >
+                  </li>
+                  <!-- <li class="contact-item">
+                      <i class="fa fa-map-marker"></i>
+                      <address>&nbsp;&nbsp;353 - Manimahal, 2nd Floor,<br>Room No. - A/8, Kalbadevi Road,<br>Mumbai, Maharashtra - 400 002.</address>
+                  </li> -->
+                  </ul>
+              </div>
+          </div>
+          <footer class="py">
+          <ul class="bottom-links">
+              <li class="bot-link">
+              <a href="/public/views/pp.html" class="policy">Privacy Policy</a>
+              </li><span style="color: #e9ebed;">|</span>
+              <li class="bot-link">
+              <a href="/public/views/tnc.html" class="policy">Terms and Conditions</a>
+              </li>
+          </ul>
+          <p class="text-center">
+              © <span id="current-year"></span> 
+              &nbsp;<a id="company" href="/index.html">Globetrotters Voyage</a>.
+              All rights reserved - Design:
+              <a href="mailto:k.keyonix@gmail.com" id="design-company"><strong>Keyonix</strong></a>
+            </p>              
+          </footer>
+      </footer>
+
+        <!-- Go To Top -->
+        <button onclick="topFunction()" id="myBtn" title="Go to top">
+            <i class="fa fa-angle-up fa-2x"></i>
+        </button>
+
+    <!-- Script Files -->
+    <script src="/public/script.js"></script>
+
+    <!-- Email JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- AOS Animation JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        duration: 1200, // animation duration
+        once: true,     // whether animation should happen only once - while scrolling down
+    });
+    </script>
+
+    <!-- Current Year -->
+    <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
