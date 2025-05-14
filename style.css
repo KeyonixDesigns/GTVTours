@@ -895,7 +895,7 @@ section .home{
   padding-bottom: var(--section-padding);
 }
 
-.destination > p {
+#packages > p {
   color: var(--light);
   text-align: center;
   font-size: var(--secondary);
