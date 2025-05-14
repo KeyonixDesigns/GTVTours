@@ -881,6 +881,10 @@ section .home{
   .gallery{
     order: 1;
   }
+
+  .swiper-slide-active > img {
+        filter: grayscale(0);
+  }
 }
 
 @media (max-width:480px){
