@@ -433,7 +433,7 @@ button.query-float img {
 
 /* Home */
 .home{
-    background: url('/public/img/Himachal_D.png');
+    background: url('/public/img/Himachal_D.webp');
     background-size: 100% 100vh;
     width: 100%;
     height: 100vh;
@@ -445,7 +445,7 @@ section .home{
 
 @media (max-width:768px) {
   .home{
-    background: url('/public/img/Himachal_M.png');
+    background: url('/public/img/Himachal_M.webp');
     background-size: 100% 100vh;
     height: 100vh;
   }

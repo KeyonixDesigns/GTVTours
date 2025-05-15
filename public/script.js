@@ -55,13 +55,13 @@ document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
       navLinks.querySelectorAll("a").forEach((link) => (link.style.color = "#e9ebed"));
       searchBtn.style.color = "#e9ebed";
       searchInput.style.color = "#e9ebed";
-      logoImg.src = "/public/img/Logo_Nav.png";
+      logoImg.src = "/public/img/Logo_Nav.webp";
     } else {
       document.querySelector(".navbar").classList.remove("scrolled");
-      navLinks.querySelectorAll("a").forEach((link) => (link.style.color = "#111111"));
-      searchBtn.style.color = "#111111";
-      searchInput.style.color = "#111111";
-      logoImg.src = "/public/img/GV_Final_BLACK_CIrcle_withoutBG.png";
+      navLinks.querySelectorAll("a").forEach((link) => (link.style.color = "#1b1b1b"));
+      searchBtn.style.color = "#1b1b1b";
+      searchInput.style.color = "#1b1b1b";
+      logoImg.src = "/public/img/GV_Final_BLACK_CIrcle_withoutBG.webp";
     }
   });
 });

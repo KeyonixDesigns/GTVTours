@@ -433,7 +433,7 @@
   
   /* Home */
   .home{
-      background: url('/public/img/NorthEast_D.png');
+      background: url('/public/img/NorthEast_D.webp');
       background-size: 100% 100vh;
       width: 100%;
       height: 100vh;
@@ -445,7 +445,7 @@
   
   @media (max-width:768px) {
     .home{
-      background: url('/public/img/NorthEast_M.png');
+      background: url('/public/img/NorthEast_M.webp');
       background-size: 100% 100vh;
       height: 100vh;
     }

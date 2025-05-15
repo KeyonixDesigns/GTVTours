@@ -901,3 +901,12 @@
 .carousel.prev .arrows button{
     pointer-events: none;
 }
+
+@media (max-width:768px) {
+  .carousel .list .item .content .title,
+.carousel .list .item .content .topic{
+    font-weight: bold;
+    font-size: 3.1em;
+    line-height: 1.3em;
+}
+}

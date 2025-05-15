@@ -391,7 +391,7 @@ body{
 
 /* Thank You Container */
 .background-container {
-    background-image: url("/public/img/bg.jpg");
+    background-image: url("/public/img/bg.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
