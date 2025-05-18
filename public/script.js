@@ -288,24 +288,3 @@ window.onclick = function (event) {
 };
 
 // Blog Page Cards
-document.addEventListener('DOMContentLoaded', () => {
-  const readMoreButtons = document.querySelectorAll('.read-more');
-  const closeButtons = document.querySelectorAll('.cb');
-  const container = document.querySelector('.blog-container');
-
-  readMoreButtons.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      const card = e.target.closest('.blog-card');
-      card.classList.add('expanded');
-      container.classList.add('blurred');
-    });
-  });
-
-  closeButtons.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      const card = e.target.closest('.blog-card');
-      card.classList.remove('expanded');
-      container.classList.remove('blurred');
-    });
-  });
-});

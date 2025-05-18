@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/public/img/GTV_BLACK_MAN.webp" type="image/svg+xml" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
 
     <!-- AOS Animation CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -111,7 +112,7 @@
       <header class="navbar">
         <div class="navbar-container">
             <div class="logo">
-                <a href="/index.html"><img src="/public/img/GV_Final_BLACK_CIrcle_withoutBG.webp" alt=""></a>
+                <a href="/index.html"><img src="/public/img/Logo_Nav.webp" alt=""></a>
             </div>
             <nav class="nav-links">
                 <ul>
@@ -191,7 +192,7 @@
     </header>
 
     <!-- Main Content -->
-    <div class="container">
+    <!-- <div class="container">
     <div class="message-box">
       <h1>🚧 Under Development 🚧</h1>
       <p>We’re Working Hard To Bring Something Amazing. Stay Tuned!</p>
@@ -200,7 +201,85 @@
         <a href="/public/views/packages.html" class="btn secondary">Explore More!</a>
       </div>
     </div>
+  </div> -->
+
+  <section class="blog-section container">
+  <div class="blog-grid">
+    <!-- Blog 1 -->
+    <div class="blog-card" data-id="1" data-title="Himachal Pradesh: A Paradise in the Himalayas" data-content-id="blog-1">
+      <div class="blog-image">
+        <img src="/public/img/Himachal_bg.webp" alt="">
+
+        <!-- Button -->
+        <div class="span">
+          <p><button class="read-more-btn"><i class="ri-arrow-right-up-line"></i></button></p>
+        </div>
+      </div>
+      <div class="blog-content">
+        <h2>Himachal Pradesh: A Paradise in the Himalayas</h2>
+        <p class="excerpt">
+          Explore the enchanting beauty of Himachal Pradesh, a land of breathtaking landscapes, snow-capped peaks, and spiritual serenity. Discover must-visit destinations like Shimla, Manali, Dharamshala, and Kasol, each offering a unique experience for travelers.
+        </p>
+      </div>
+    </div>
+
+    <!-- Blog 2 -->
+    <div class="blog-card" data-id="2" data-title="Rajasthan: The Land of Royals and Mystique" data-content-id="blog-2">
+      <div class="blog-image">
+        <img src="/public/img/Rajasthan_bg.webp" alt="">
+
+        <!-- Button -->
+        <div class="span">
+          <p><button class="read-more-btn"><i class="ri-arrow-right-up-line"></i></button></p>
+        </div>
+      </div>
+      <div class="blog-content">
+        <h2>Rajasthan: The Land of Royals and Mystique</h2>
+        <p class="excerpt">
+          Explore the grandeur and heritage of Rajasthan, a land of majestic forts, golden deserts, and vibrant culture. Discover iconic destinations like Jaipur, Udaipur, Jaisalmer, and Jodhpur, along with some mysterious places that hold intriguing legends.
+        </p>
+        
+      </div>
+    </div>
+
+    <!-- Blog 3 -->
+    <!-- <div class="blog-card" data-id="1" data-title="Himachal Pradesh: A Paradise in the Himalayas" data-content-id="blog-1">
+      <img src="/public/img/Himachal_bg.webp" alt="">
+      <div class="blog-content">
+        <h2>Himachal Pradesh: A Paradise in the Himalayas</h2>
+        <p class="excerpt">
+          Explore the enchanting beauty of Himachal Pradesh, a land of breathtaking landscapes, snow-capped peaks, and spiritual serenity. Discover must-visit destinations like Shimla, Manali, Dharamshala, and Kasol, each offering a unique experience for travelers.
+        </p>
+        <div class="span">
+          <p><button class="read-more-btn">Read More</button></p>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Blog 4 -->
+    <!-- <div class="blog-card" data-id="2" data-title="Rajasthan: The Land of Royals and Mystique" data-content-id="blog-2">
+      <img src="/public/img/Rajasthan_bg.webp" alt="">
+      <div class="blog-content">
+        <h2>Rajasthan: The Land of Royals and Mystique</h2>
+        <p class="excerpt">
+          Explore the grandeur and heritage of Rajasthan, a land of majestic forts, golden deserts, and vibrant culture. Discover iconic destinations like Jaipur, Udaipur, Jaisalmer, and Jodhpur, along with some mysterious places that hold intriguing legends.
+        </p>
+        <div class="span">
+          <p><button class="read-more-btn">Read More</button></p>
+        </div>
+      </div>
+    </div> -->
+
   </div>
+</section>
+
+<!-- Modal for Blog Content -->
+<div id="blogModal" class="blog-modal">
+  <div class="blog-modal-content">
+    <span class="blog-close">&times;</span>
+    <div id="blogModalBody"></div>
+  </div>
+</div>
 
     <!-- Contact & Footer -->
     <footer id="contact" class="footer">
@@ -285,5 +364,247 @@
   <script>
   document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>
+
+  <!-- Blog Cards -->
+  <script>
+  const blogModal = document.getElementById('blogModal');
+  const blogModalBody = document.getElementById('blogModalBody');
+  const blogClose = document.querySelector('.blog-close');
+
+  const blogContents = {
+    "blog-1": `
+      <h2>Himachal Pradesh: A Paradise in the Himalayas</h2>
+      <br>
+      <p><strong>Himachal Pradesh</strong>, often referred to as the "Land of Gods," is a mesmerizing state in northern India, nestled in the mighty Himalayas. With its picturesque valleys, serene monasteries, and adventure-filled landscapes, it is a haven for nature lovers, thrill-seekers, and spiritual wanderers alike. Whether you seek the colonial charm of Shimla, the adventure rush of Manali, or the spiritual solace of Dharamshala, Himachal Pradesh has something for everyone. Let’s explore some of the top destinations in this magical land.</p>
+      <br>
+      <hr />
+      <br>
+      <h3>How to Reach Himachal Pradesh</h3>
+      <p>Himachal Pradesh is well-connected by road, rail, and air.</p>
+      <ul>
+        <li><strong>By Air:</strong> The major airports are in Bhuntar (Kullu-Manali), Kangra (Gaggal Airport for Dharamshala), and Shimla.</li>
+        <li><strong>By Rail:</strong> The Kalka-Shimla toy train is a popular route, while Pathankot serves as a railhead for Dalhousie and Dharamshala.</li>
+        <li><strong>By Road:</strong> Himachal Pradesh has an extensive network of roads, with regular bus services from Delhi, Chandigarh, and other nearby states.</li>
+      </ul>
+      <br>
+      <h3>Accommodation in Himachal Pradesh</h3>
+      <p>Himachal Pradesh offers a variety of accommodation options ranging from luxury resorts to budget guesthouses and backpacker hostels. Popular choices include:</p>
+      <ul>
+        <li><strong>Luxury Stays:</strong> The Oberoi Cecil (Shimla), Manu Allaya Resort (Manali), Fortune Park Dalhousie.</li>
+        <li><strong>Mid-range Hotels:</strong> Hotel Willow Banks (Shimla), Snow Valley Resorts (Manali), The Exotica (Dharamshala).</li>
+        <li><strong>Budget Options:</strong> Zostel (Kasol, Manali, McLeodganj), homestays in villages, and government guesthouses.</li>
+      </ul>
+      <br>
+      <h3>Local Food & Cuisine</h3>
+      <p>Himachali cuisine is a delight for food lovers, with traditional dishes that offer unique flavors. Must-try foods include:</p>
+      <ul>
+        <li><strong>Dham:</strong> A traditional meal served on special occasions.</li>
+        <li><strong>Sidu:</strong> A local bread stuffed with nuts and spices.</li>
+        <li><strong>Chana Madra:</strong> A chickpea curry cooked with yogurt.</li>
+        <li><strong>Thukpa & Momos:</strong> Tibetan influences in Dharamshala and McLeodganj.</li>
+        <li><strong>Apple Wine & Local Beverages:</strong> Himachal is known for its apple orchards and locally brewed wines.</li>
+      </ul>
+      <br>
+      <h3>Best Ways to Travel Within Himachal Pradesh</h3>
+      <ul>
+        <li><strong>Local Buses:</strong> Affordable and well-connected for intercity travel.</li>
+        <li><strong>Private Taxis:</strong> Easily available for comfortable travel between destinations.</li>
+        <li><strong>Bike Rentals:</strong> A great option for adventure seekers exploring places like Spiti and Lahaul.</li>
+        <li><strong>Toy Train:</strong> A scenic journey from Kalka to Shimla.</li>
+      </ul>
+      <br>
+      <h3>1. Shimla – The Queen of Hills</h3>
+      <p>Shimla, the capital of Himachal Pradesh, is a beautiful hill station known for its colonial architecture, bustling markets, and scenic vistas. Popular attractions include:</p>
+      <ul>
+        <li><strong>The Ridge & Mall Road:</strong> Ideal for a leisurely stroll with shops and cafes.</li>
+        <li><strong>Jakhoo Temple:</strong> A Hanuman temple with panoramic views.</li>
+        <li><strong>Kufri:</strong> A small hill station near Shimla, famous for skiing and scenic beauty.</li>
+        <li><strong>Christ Church:</strong> A historic church with stunning neo-Gothic architecture.</li>
+      </ul>
+      <br>
+      <h3>2. Manali – The Adventure Capital</h3>
+      <p>Manali is one of the most famous tourist destinations in India, offering both adventure and tranquility. Key attractions include:</p>
+      <ul>
+        <li><strong>Rohtang Pass:</strong> A paradise for snow lovers with stunning landscapes.</li>
+        <li><strong>Solang Valley:</strong> Known for paragliding, skiing, and snowboarding.</li>
+        <li><strong>Hidimba Devi Temple:</strong> An ancient wooden temple set amidst lush greenery.</li>
+        <li><strong>Old Manali:</strong> A hippie paradise with quaint cafes and vibrant culture.</li>
+      </ul>
+      <br>
+      <h3>3. Kullu – The Valley of Gods</h3>
+      <p>Kullu, often paired with Manali, is known for its stunning landscapes and thrilling adventures. Highlights include:</p>
+      <ul>
+        <li><strong>Great Himalayan National Park:</strong> A UNESCO World Heritage site rich in flora and fauna.</li>
+        <li><strong>Bijli Mahadev Temple:</strong> A sacred temple with a striking view of the Kullu Valley.</li>
+        <li><strong>River Rafting in Beas River:</strong> A thrilling experience for adventure enthusiasts.</li>
+      </ul>
+      <br>
+      <h3>4. Dharamshala – The Land of the Dalai Lama</h3>
+      <p>Dharamshala, home to the Tibetan spiritual leader Dalai Lama, offers a unique blend of Tibetan culture and natural beauty. Key places to visit:</p>
+      <ul>
+        <li><strong>McLeodganj:</strong> A vibrant town known for monasteries, Tibetan culture, and scenic trails.</li>
+        <li><strong>Bhagsu Waterfall:</strong> A picturesque waterfall with a peaceful ambiance.</li>
+        <li><strong>Triund Trek:</strong> A moderate trek offering breathtaking views of the Dhauladhar range.</li>
+        <li><strong>Namgyal Monastery:</strong> A spiritual retreat for peace seekers.</li>
+      </ul>
+      <br>
+      <h3>5. Dalhousie – A Colonial Retreat</h3>
+      <p>Dalhousie is a charming hill station reminiscent of the British era, with its scenic beauty and old-world charm. Major attractions include:</p>
+      <ul>
+        <li><strong>Khajjiar:</strong> Known as the "Mini Switzerland of India.</li>
+        <li><strong>Panchpula:</strong> A serene spot with cascading waterfalls.</li>
+        <li><strong>Dainkund Peak:</strong> Offers a panoramic view of the valley.</li>
+      </ul>
+      <br>
+      <h3>6. Kasol – The Backpacker’s Paradise</h3>
+      <p>Kasol, a quaint village in the Parvati Valley, is a favorite among backpackers and nature lovers. Top experiences include:</p>
+      <ul>
+        <li><strong>Trekking to Kheerganga:</strong> A beautiful trek with hot springs at the summit.</li>
+        <li><strong>Cafes by the Parvati River:</strong> Relax by the river and enjoy delicious food.</li>
+        <li><strong>Malana Village:</strong> A mystical village with its unique traditions and culture.</li>
+      </ul>
+      <br>
+      <h3>7. Manikaran – A Spiritual Escape</h3>
+      <p>Manikaran, near Kasol, is famous for its hot springs and religious significance. Must-visit places include:</p>
+      <ul>
+        <li><strong>Manikaran Sahib Gurudwara:</strong> A revered Sikh pilgrimage site.</li>
+        <li><strong>Hot Springs:</strong> Believed to have healing properties.</li>
+        <li><strong>Lord Shiva Temple:</strong> A temple with rich mythological importance.</li>
+      </ul>
+      <br>
+      <h3>8. McLeodganj – The Little Lhasa of India</h3>
+      <p>McLeodganj, a suburb of Dharamshala, is known for its strong Tibetan influence and breathtaking landscapes. Popular attractions include:</p>
+      <ul>
+        <li><strong>Tsuglagkhang Complex:</strong> The official residence of the Dalai Lama.</li>
+        <li><strong>Dharamkot:</strong> A peaceful spot with yoga retreats and meditation centers.</li>
+        <li><strong>Naddi Viewpoint:</strong> Offers stunning views of the Dhauladhar range.</li>
+      </ul>
+      <br>
+      <hr />
+      <br>
+      <h3>Conclusion</h3>
+      <p><strong>Himachal Pradesh</strong> is a dream destination for travelers of all kinds, whether you seek adventure, peace, or spiritual solace. From the snow-clad mountains of Manali to the serene monasteries of Dharamshala, every corner of this state has something unique to offer. Plan your trip and immerse yourself in the magical charm of Himachal Pradesh!</p>
+    `,
+
+    "blog-2": `
+      <h2>Rajasthan: The Land of Royals and Mystique</h2>
+      <br>
+      <p><strong>Rajasthan</strong>, India's largest state, is a mesmerizing blend of royal history, architectural marvels, and desert landscapes. From the Pink City of Jaipur to the lake paradise of Udaipur, the golden sands of Jaisalmer to the blue streets of Jodhpur, Rajasthan is an enchanting experience waiting to be explored. Additionally, the state is home to some eerie and unexplained mysteries, adding an element of thrill to your journey.</p>
+      <br>
+      <hr />
+      <br>
+      <h3>How to Reach Rajasthan</h3>
+      <p>Rajasthan is well-connected by road, rail, and air.</p>
+      <ul>
+        <li><strong>By Air:</strong> Major airports include Jaipur International Airport, Maharana Pratap Airport (Udaipur), and Jodhpur Airport.</li>
+        <li><strong>By Rail:</strong> Rajasthan is accessible via an extensive railway network, including luxury trains like the Palace on Wheels.</li>
+        <li><strong>By Road:</strong> Well-maintained highways connect Rajasthan to Delhi, Gujarat, and other states. Buses, taxis, and self-drives are popular options.</li>
+      </ul>
+      <br>
+      <h3>Accommodation in Rajasthan</h3>
+      <p>Rajasthan offers a variety of stays ranging from royal palaces to budget-friendly guesthouses.</p>
+      <ul>
+        <li><strong>Luxury Stays:</strong> Taj Lake Palace (Udaipur), Umaid Bhawan Palace (Jodhpur), The Leela Palace (Jaipur).</li>
+        <li><strong>Mid-range Hotels:</strong> The Fern Residency (Jaisalmer), Chokhi Dhani Resort (Jaipur), Trident Udaipur.</li>
+        <li><strong>Budget Options:</strong> Zostel hostels (Jaipur, Jodhpur, Udaipur), Havelis turned into hotels, and homestays.</li>
+      </ul>
+      <br>
+      <h3>Local Food & Cuisine</h3>
+      <p>Rajasthan is a delight for food lovers, offering a mix of spicy and sweet flavors. Must-try dishes include:</p>
+      <ul>
+        <li><strong>Dal Baati Churma:</strong> The quintessential Rajasthani meal.</li>
+        <li><strong>Gatte ki Sabzi:</strong> A delicious gram flour-based curry.</li>
+        <li><strong>Ker Sangri:</strong> A desert-special vegetable dish.</li>
+        <li><strong>Pyaaz Kachori & Mirchi Bada:</strong> Popular snacks from Jaipur and Jodhpur.</li>
+        <li><strong>Makhaniya Lassi:</strong> A rich and creamy drink from Jodhpur.</li>
+      </ul>
+      <br>
+      <h3>Best Ways to Travel Within Rajasthan</h3>
+      <ul>
+        <li><strong>Local Buses:</strong> Rajasthan State Road Transport Corporation (RSRTC) provides affordable travel between cities.</li>
+        <li><strong>Private Taxis & Cabs:</strong> Best for comfortable and customizable journeys.</li>
+        <li><strong>Auto Rickshaws & Tuk-Tuks:</strong> Available in cities for short distances.</li>
+        <li><strong>Camel & Jeep Safaris:</strong> Ideal for exploring the Thar Desert in Jaisalmer.</li>
+      </ul>
+      <br>
+      <h3>1. Jaipur – The Pink City</h3>
+      <p>Jaipur, the capital of Rajasthan, is a vibrant city known for its magnificent palaces and bustling bazaars. Must-visit places include:</p>
+      <ul>
+        <li><strong>Amber Fort:</strong> A stunning fort with intricate architecture and elephant rides.</li>
+        <li><strong>City Palace:</strong> A royal residence showcasing Rajasthan’s regal heritage.</li>
+        <li><strong>Hawa Mahal:</strong> The iconic "Palace of Winds" with its honeycomb windows.</li>
+        <li><strong>Jantar Mantar:</strong> A UNESCO-listed astronomical observatory.</li>
+        <li><strong>Nahargarh Fort:</strong> Offers breathtaking views of Jaipur’s skyline.</li>
+      </ul>
+      <br>
+      <h3>2. Udaipur – The City of Lakes</h3>
+      <p>Udaipur is a romantic city known for its stunning lakes and palatial architecture. Key attractions include:</p>
+      <ul>
+        <li><strong>Lake Pichola & Boat Ride:</strong> A serene experience with views of the City Palace.</li>
+        <li><strong>City Palace:</strong> An architectural masterpiece overlooking the lake.</li>
+        <li><strong>Jagdish Temple:</strong> A beautifully carved Hindu temple.</li>
+        <li><strong>Saheliyon Ki Bari:</strong> A historic garden with fountains and marble pavilions.</li>
+        <li><strong>Monsoon Palace:</strong> Offers panoramic views of the city and surrounding hills.</li>
+      </ul>
+      <br>
+      <h3>3. Jaisalmer – The Golden City</h3>
+      <p>Kullu, often paired with Manali, is known for its stunning landscapes and thrilling adventures. Highlights include:</p>
+      <ul>
+        <li><strong>Jaisalmer Fort:</strong> A living fort with homes, shops, and temples inside.</li>
+        <li><strong>Sam Sand Dunes:</strong> Enjoy camel safaris and cultural performances in the desert.</li>
+        <li><strong>Patwon Ki Haveli:</strong> A cluster of intricate havelis with stunning architecture.</li>
+        <li><strong>Kuldhara Village:</strong> A mysterious abandoned village with eerie legends.</li>
+        <li><strong>Gadisar Lake:</strong> A peaceful retreat with historic temples and ghats.</li>
+      </ul>
+      <br>
+      <h3>4. Jodhpur – The Blue City</h3>
+      <p>Jodhpur is known for its blue-painted houses and majestic forts. Must-visit places include:</p>
+      <ul>
+        <li><strong>Mehrangarh Fort:</strong> One of India’s most massive forts with stunning views.</li>
+        <li><strong>Jaswant Thada:</strong> A white marble cenotaph with intricate carvings.</li>
+        <li><strong>Umaid Bhawan Palace:</strong> A blend of heritage and luxury.</li>
+        <li><strong>Clock Tower & Sardar Market:</strong> A bustling marketplace for Rajasthani handicrafts.</li>
+        <li><strong>Mandore Gardens:</strong> A historical site with beautiful cenotaphs and temples.</li>
+      </ul>
+      <br>
+      <h3>Mysterious Places in Rajasthan</h3>
+      <p>Rajasthan is also known for its mysterious and haunted locations, adding a thrill to your journey.</p>
+      <ul>
+        <li><strong>Bhangarh Fort:</strong> Dubbed India’s most haunted place, entry is restricted after sunset.</li>
+        <li><strong>Kuldhara Village:</strong> An abandoned village said to be cursed by its former inhabitants.</li>
+        <li><strong>Chand Baori (Abhaneri):</strong> An ancient stepwell with an intriguing symmetrical design.</li>
+        <li><strong>Ranthambore’s Disappearing Village:</strong> A village that mysteriously relocated overnight.</li>
+      </ul>
+      <br>
+      <hr />
+      <br>
+      <h3>Conclusion</h3>
+      <p><strong>Rajasthan</strong> is a land where history meets adventure, and mystery blends with culture. From the grandeur of Jaipur’s palaces to the mystique of abandoned villages, every corner of this state tells a story. Whether you seek heritage, romance, adventure, or supernatural experiences, Rajasthan promises an unforgettable journey. Pack your bags and set out to explore this royal state in all its glory!</p>
+    `
+  };
+
+  document.querySelectorAll('.read-more-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.blog-card');
+      const blogId = card.getAttribute('data-content-id');
+
+      blogModalBody.innerHTML = blogContents[blogId] || "<p>Blog not found.</p>";
+      blogModal.style.display = "flex";
+      document.body.style.overflow = "hidden"; // prevent background scroll
+    });
+  });
+
+  blogClose.addEventListener('click', () => {
+    blogModal.style.display = "none";
+    document.body.style.overflow = "auto";
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === blogModal) {
+      blogModal.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+  });
+</script>
 </body>
 </html>
