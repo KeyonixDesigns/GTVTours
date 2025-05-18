@@ -21,6 +21,21 @@ document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
   });
 });
 
+  document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768) {
+      navLinks.classList.remove("active");
+      hamburger.classList.remove("active");
+
+      // Handle special redirect for "About Us" in mobile
+      if (link.getAttribute('href') === '#about') {
+        e.preventDefault(); // prevent smooth scroll
+        window.location.href = '/public/views/rm.html'; // redirect to rm.html
+      }
+    }
+  });
+});
+
   // Hamburger menu toggle
   hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
