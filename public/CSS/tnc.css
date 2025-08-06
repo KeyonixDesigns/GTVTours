@@ -38,15 +38,16 @@
       background-color: var(--dark);
   }
   
-  /* Scroll bar */
-  ::-webkit-scrollbar {
-      display: none;
-      /* width: 8px;
-      background: var(--medium-gray); */
-  }
-  /* ::-webkit-scrollbar-thumb {
-      background-color: var(--white-shade);
-  } */
+/* Scroll bar */
+::-webkit-scrollbar {
+  /* display: none; */
+  width: 8px;
+  background: var(--dark);
+}
+::-webkit-scrollbar-thumb {
+  background-color: lightgray;
+  border-radius: 8px;
+}
   
   /* Query Form Floater */
   .query-float {
